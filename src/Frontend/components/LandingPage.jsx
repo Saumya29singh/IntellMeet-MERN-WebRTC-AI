@@ -98,8 +98,7 @@ export default function LandingPage({ onGetStarted }) {
   ];
 
   return (
-    <div id="landing-container" className="min-h-screen bg-gradient-to-b from-[#140505] via-[#1F0A0A] to-[#0D0202] text-white font-sans selection:bg-red-500/30 selection:text-red-200 overflow-x-hidden">
-      
+   <div id="landing-container" className="min-h-screen bg-gradient-to-b from-[#E0DFFD] via-[#F7F7FC] to-[#E0DFFD] text-[#46467A] font-sans overflow-x-hidden">
       {/* Decorative ambient gradient backdrop */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-900/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-[600px] right-1/4 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none" />
@@ -219,31 +218,39 @@ export default function LandingPage({ onGetStarted }) {
       </section>
 
       {/* Grid Features Section */}
-      <section id="features-section" className="py-20 bg-slate-900/40 border-y border-white/5 px-6 md:px-12">
+     <section
+  id="features-section"
+  className="py-20 bg-[#E0DFFD] border-y border-[#CFCFEA] px-6 md:px-12"
+>
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">
               SMARTER MEETINGS. UNIFIED WORKSPACES.
             </h2>
-            <p className="text-slate-400">
-              Stop shifting tabs to access whiteboard canvas nodes, scheduler calendars, or task checklists. IntelliMeet Pro hosts everything inside and outside the audio room.
+            <p className="text-slate-400">top shifting tabs to access whiteboard canvas nodes, scheduler calendars, or task checklists. IntelliMeet Pro hosts everything inside and outside the audio room.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feat, idx) => (
-              <motion.div 
-                key={idx}
-                whileHover={{ y: -4 }}
-                className="p-6 rounded-2xl bg-slate-950/60 border border-white/5 hover:border-slate-800 transition-all shadow-xl text-left"
-              >
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center mb-5">
-                  {feat.icon}
-                </div>
-                <h3 className="font-semibold text-lg text-slate-100 mb-2">{feat.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-400">{feat.description}</p>
-              </motion.div>
-            ))}
+           {features.map((feat, idx) => (
+  <motion.div
+    key={idx}
+    whileHover={{ y: -4 }}
+    className="p-6 rounded-2xl bg-[#46467A] border border-[#7766C6] hover:bg-[#5A5A96] transition-all shadow-xl text-left"
+  >
+    <div className="w-12 h-12 rounded-xl bg-[#2E2E5A] border border-[#7766C6] flex items-center justify-center mb-5">
+      {feat.icon}
+    </div>
+
+    <h3 className="font-semibold text-lg text-white mb-3">
+      {feat.title}
+    </h3>
+
+    <p className="text-sm leading-relaxed text-[#E0DFFD]">
+      {feat.description}
+    </p>
+  </motion.div>
+))}
           </div>
         </div>
       </section>
@@ -265,8 +272,8 @@ export default function LandingPage({ onGetStarted }) {
               key={idx}
               className={`p-8 rounded-2xl relative text-left ${
                 tier.popular 
-                  ? 'bg-gradient-to-b from-indigo-950/40 to-slate-950 border-2 border-indigo-500/50 shadow-2xl shadow-indigo-500/10' 
-                  : 'bg-slate-900/30 border border-white/5 shadow-xl'
+                ? 'bg-[#1E3A8A] border-2 border-[#4F8CFF] shadow-2xl' 
+                  :'bg-[#BFD7FF] border border-[#7AA8FF] shadow-xl'
               }`}
             >
               {tier.popular && (
@@ -274,19 +281,36 @@ export default function LandingPage({ onGetStarted }) {
                   Most Popular
                 </div>
               )}
-              <h3 className="text-lg font-bold text-slate-200 mb-2">{tier.name}</h3>
+            <h3 className={`text-lg font-bold mb-2 ${
+  tier.popular ? 'text-white' : 'text-[#1E3A8A]'
+}`}></h3>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-4xl sm:text-5xl font-extrabold">{tier.price}</span>
-                <span className="text-xs text-slate-400 font-medium ml-1">{tier.period}</span>
+               <span
+    className={`text-4xl sm:text-5xl font-extrabold ${
+      tier.popular ? "text-white" : "text-[#1E3A8A]"
+    }`}
+  >
+    {tier.price}
+  </span>
+
+              <span
+    className={`text-xs font-medium ml-1 ${
+      tier.popular ? "text-[#E0DFFD]" : "text-[#1E3A8A]"
+    }`}
+  >
+    {tier.period}
+  </span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed mb-6">{tier.description}</p>
+              <p className={`text-xs leading-relaxed mb-6 ${
+  tier.popular ? 'text-[#E0DFFD]' : 'text-[#1E3A8A]'
+}`}></p>
               <button 
                 id={`pricing-btn-${idx}`}
                 onClick={onGetStarted}
                 className={`w-full py-3 rounded-xl text-sm font-bold transition-all transform hover:scale-[1.02] border-none cursor-pointer ${
                   tier.popular
                     ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20'
-                    : 'bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white'
+                   : 'bg-[#46467A] hover:bg-[#5A5A96] text-white'
                 }`}
               >
                 {tier.buttonText}
@@ -296,10 +320,15 @@ export default function LandingPage({ onGetStarted }) {
                 <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider block mb-4">Included capabilities:</span>
                 <ul className="flex flex-col gap-3">
                   {tier.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-start gap-2.5 text-sm text-slate-400">
-                      <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
+                   <li
+  key={fIdx}
+  className={`flex items-start gap-2.5 text-sm ${
+    tier.popular ? "text-[#E0DFFD]" : "text-black"
+  }`}
+>
+  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+  <span>{feat}</span>
+</li>
                   ))}
                 </ul>
               </div>
@@ -320,17 +349,25 @@ export default function LandingPage({ onGetStarted }) {
             {faqs.map((faq, idx) => (
               <div 
                 key={idx} 
-                className="rounded-xl bg-slate-900/40 border border-white/5 overflow-hidden transition-all duration-300"
+               className="rounded-xl bg-[#46467A] border border-[#7766C6] overflow-hidden transition-all duration-300"
               >
                 <button 
                   onClick={() => toggleFaq(idx)}
                   className="w-full text-left py-5 px-6 font-semibold flex justify-between items-center bg-transparent group border-none cursor-pointer"
                 >
-                  <span className="group-hover:text-indigo-400 transition-colors text-slate-100">{faq.q}</span>
-                  <ChevronDown className={`w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition-transform ${faqOpen[idx] ? 'rotate-180' : ''}`} />
+        <span
+  className="font-bold text-xl transition-colors group-hover:text-[#FFC212]"
+  style={{ color: "#FFFFFF" }}
+>
+  {faq.q}
+</span>
+                  <ChevronDown className={`w-4 h-4 text-[#E0DFFD] group-hover:text-[#FFC212] transition-transform ${faqOpen[idx] ? 'rotate-180' : ''}`} />
                 </button>
                 {faqOpen[idx] && (
-                  <div className="px-6 pb-5 pt-1 text-sm text-slate-400 leading-relaxed border-t border-white/5/40 text-left">
+                 <div
+  className="px-6 pb-5 pt-3 text-base leading-relaxed border-t border-[#7766C6] text-left"
+  style={{ color: "#E0DFFD" }}
+>
                     {faq.a}
                   </div>
                 )}
@@ -342,16 +379,16 @@ export default function LandingPage({ onGetStarted }) {
 
       {/* Call To Action Box Footer */}
       <section id="cta-section" className="py-20 px-6 max-w-5xl mx-auto text-center">
-        <div className="rounded-3xl p-8 md:p-14 bg-gradient-to-tr from-indigo-950 via-slate-900 to-indigo-950/20 border border-indigo-500/20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none" />
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-slate-100">READY TO BOOST YOUR MEETING PRODUCTIVITY?</h2>
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
+        <div className="rounded-3xl p-8 md:p-14 bg-[#46467A] border border-[#7766C6] relative overflow-hidden shadow-xl">
+         <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#7766C6]/20 rounded-full blur-[80px] pointer-events-none" />
+      <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">READY TO BOOST YOUR MEETING PRODUCTIVITY?</h2>
+          <p className="text-[#E0DFFD] text-base md:text-lg max-w-2xl mx-auto mb-8">
             Experience clean, glassmorphic layout controls backed by real-time WebSockets and Gemini models today.
           </p>
           <button 
             id="btn-cta-bottom"
             onClick={onGetStarted}
-            className="px-10 py-4 rounded-xl font-bold bg-white text-slate-950 hover:bg-slate-100 transition-all transform hover:scale-105 border-none cursor-pointer"
+            className="px-10 py-4 rounded-xl font-bold bg-[#7766C6] text-white hover:bg-[#6655B8] transition-all transform hover:scale-105 border-none cursor-pointer"
           >
             Start IntelliMeeting Free
           </button>

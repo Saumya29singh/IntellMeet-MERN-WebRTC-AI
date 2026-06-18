@@ -27,9 +27,9 @@ function VideoFeed({ stream, isMuted, userName, isLocal, connectionState }) {
         autoPlay
         playsInline
         muted={isMuted || isLocal}
-        className="w-full h-full object-cover rounded-xl bg-slate-950"
+        className="w-full h-full object-cover rounded-xl bg-[#E0DFFD]"
       />
-      <div className="absolute top-4 left-4 bg-slate-950/80 px-2.5 py-1 rounded-lg text-[10px] font-extrabold flex items-center gap-1.5 border border-white/5 z-10">
+      <div className="absolute top-4 left-4 bg-[#E0DFFD]/80 px-2.5 py-1 rounded-lg text-[10px] font-extrabold flex items-center gap-1.5 border border-white/5 z-10">
         <span className={`w-1.5 h-1.5 rounded-full ${
           isLocal ? 'bg-indigo-400' :
           connectionState === 'connected' ? 'bg-emerald-400' :
@@ -37,7 +37,7 @@ function VideoFeed({ stream, isMuted, userName, isLocal, connectionState }) {
         }`} />
         <span>{userName} {isLocal && '(You)'}</span>
         {connectionState && !isLocal && (
-          <span className="text-[8px] font-mono text-slate-500 bg-slate-950/45 px-1 rounded-md lowercase">({connectionState})</span>
+          <span className="text-[8px] font-mono text-slate-500 bg-[#E0DFFD]/45 px-1 rounded-md lowercase">({connectionState})</span>
         )}
       </div>
     </div>
@@ -774,7 +774,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
   };
 
   return (
-    <div id="room-workspace" className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans overflow-hidden">
+    <div id="room-workspace" className="min-h-screen bg-[#E0DFFD] text-slate-100 flex flex-col font-sans overflow-hidden">
       
       {/* Upper Navigation block */}
       <header id="room-header" className="px-6 py-4 bg-slate-900/95 border-b border-white/5 flex items-center justify-between gap-6 shrink-0 relative z-20">
@@ -787,7 +787,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
               {meeting?.title || 'Interactive WebRTC Conference'}
             </h2>
             <div className="flex items-center gap-2.5 mt-1 text-[10px] text-slate-400">
-              <span className="font-mono bg-slate-950 px-1.5 py-0.5 rounded tracking-wide leading-none border border-white/5">ID: {meetingId}</span>
+              <span className="font-mono bg-[#E0DFFD] px-1.5 py-0.5 rounded tracking-wide leading-none border border-white/5">ID: {meetingId}</span>
               <span className="font-mono text-indigo-400 bg-indigo-500/5 px-1.5 py-0.5 rounded border border-indigo-500/10 leading-none">PIN: {passcode}</span>
               <button 
                 onClick={copyCredentialsClipboard}
@@ -844,7 +844,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
             <select
               value={selectedVideoId}
               onChange={(e) => selectHardwareInputDevice('video', e.target.value)}
-              className="bg-slate-950 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none"
+              className="bg-[#E0DFFD] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none"
             >
               {videoDevices.map((d) => (
                 <option key={d.deviceId} value={d.deviceId}>{d.label || `Camera ${d.deviceId.slice(0, 5)}`}</option>
@@ -857,7 +857,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
             <select
               value={selectedAudioId}
               onChange={(e) => selectHardwareInputDevice('audio', e.target.value)}
-              className="bg-slate-950 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none"
+              className="bg-[#E0DFFD] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none"
             >
               {audioDevices.map((d) => (
                 <option key={d.deviceId} value={d.deviceId}>{d.label || `Microphone ${d.deviceId.slice(0, 5)}`}</option>
@@ -902,7 +902,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                     ))}
                   </div>
 
-                  <div className="flex items-center bg-slate-950 p-1 rounded-lg border border-white/5 gap-1">
+                  <div className="flex items-center bg-[#E0DFFD] p-1 rounded-lg border border-white/5 gap-1">
                     {['draw', 'line', 'rect', 'eraser'].map((t) => (
                       <button 
                         key={t}
@@ -923,7 +923,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                 </div>
               </header>
 
-              <div className="flex-1 bg-slate-950/70 rounded-xl relative cursor-crosshair overflow-hidden border border-white/5">
+              <div className="flex-1 bg-[#E0DFFD]/70 rounded-xl relative cursor-crosshair overflow-hidden border border-white/5">
                 <canvas 
                   ref={canvasRef}
                   onMouseDown={startDrawingOnCanvas}
@@ -1029,7 +1029,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
         {showSidebar && (
           <aside id="room-sidebar" className="w-[360px] bg-slate-900 border-l border-white/5 flex flex-col justify-between overflow-hidden shrink-0 z-10">
             
-            <div className="flex border-b border-white/5 bg-slate-950 shrink-0">
+            <div className="flex border-b border-white/5 bg-[#E0DFFD] shrink-0">
               {['chat', 'ai', 'polls', 'participants'].map((tab) => (
                 <button 
                   key={tab}
@@ -1056,7 +1056,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                     ) : (
                       chatMessages.map((msg) => (
                         <div key={msg.id} className={`p-3 rounded-xl max-w-[95%] text-left ${
-                          msg.senderId === user.id ? 'bg-indigo-600/10 border border-indigo-500/20 ml-auto' : 'bg-slate-950 border border-white/5'
+                          msg.senderId === user.id ? 'bg-indigo-600/10 border border-indigo-500/20 ml-auto' : 'bg-[#E0DFFD] border border-white/5'
                         }`}>
                           <div className="flex justify-between items-center gap-4 mb-1">
                             <span className="font-extrabold text-[10px] text-indigo-400">{msg.senderName}</span>
@@ -1074,7 +1074,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                       placeholder="Type a message to peers..." 
                       value={chatInput}
                       onChange={(e) => setChatInput(e.target.value)}
-                      className="flex-1 bg-slate-950 border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
+                      className="flex-1 bg-[#E0DFFD] border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
                     />
                     <button 
                       type="submit"
@@ -1096,7 +1096,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                     </div>
 
                     {aiResponse && (
-                      <div className="p-4 rounded-xl bg-slate-950 border border-indigo-500/30 text-left mb-4 max-h-[45vh] overflow-y-auto">
+                      <div className="p-4 rounded-xl bg-[#E0DFFD] border border-indigo-500/30 text-left mb-4 max-h-[45vh] overflow-y-auto">
                         <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest block mb-2">Google Gemini answers:</span>
                         <div className="text-xs text-slate-200 leading-relaxed select-text space-y-2 whitespace-pre-line">
                           {aiResponse}
@@ -1105,7 +1105,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                     )}
 
                     {aiLoading && (
-                      <div className="p-4 rounded-xl bg-slate-950 border border-indigo-500/20 text-center text-xs text-slate-400 flex items-center justify-center gap-2 animate-pulse mb-4">
+                      <div className="p-4 rounded-xl bg-[#E0DFFD] border border-indigo-500/20 text-center text-xs text-slate-400 flex items-center justify-center gap-2 animate-pulse mb-4">
                         <Sparkles className="w-4 h-4 text-indigo-400 animate-spin" />
                         <span>Prompt compiling, scanning data pools...</span>
                       </div>
@@ -1120,7 +1120,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                         placeholder="Ask copilot..." 
                         value={aiPrompt}
                         onChange={(e) => setAiPrompt(e.target.value)}
-                        className="flex-1 bg-slate-950 border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
+                        className="flex-1 bg-[#E0DFFD] border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
                       />
                       <button 
                         type="submit"
@@ -1141,7 +1141,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                       {polls.map((p) => {
                         const totalVotes = Object.values(p.votes).reduce((sum, v) => sum + v, 0);
                         return (
-                          <div key={p.id} className="p-4 rounded-xl bg-slate-950 border border-white/5 text-left">
+                          <div key={p.id} className="p-4 rounded-xl bg-[#E0DFFD] border border-white/5 text-left">
                             <div className="flex justify-between items-start gap-4 mb-3">
                               <span className="font-extrabold text-xs text-slate-200 leading-normal">{p.question}</span>
                               <span className={`text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${
@@ -1185,7 +1185,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
                   )}
 
                   {meeting?.hostId === user.id ? (
-                    <form onSubmit={handleCreatePollSubmit} className="p-4 rounded-xl bg-slate-950 border border-white/5 text-left">
+                    <form onSubmit={handleCreatePollSubmit} className="p-4 rounded-xl bg-[#E0DFFD] border border-white/5 text-left">
                       <span className="text-[10px] uppercase font-bold tracking-wider text-indigo-400 block mb-3">Launch feedback ballot</span>
                       
                       <div className="flex flex-col gap-3">
@@ -1245,14 +1245,14 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
               {/* Participants listings */}
               {activeSidebarTab === 'participants' && (
                 <div className="flex-1 flex flex-col gap-4 text-left">
-                  <div className="bg-slate-950/45 p-2 rounded-lg border border-white/5 mb-2">
+                  <div className="bg-[#E0DFFD]/45 p-2 rounded-lg border border-white/5 mb-2">
                     <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Active Sockets Count</span>
                     <span className="text-xs font-black text-white">{1 + remoteStreams.length} Connected Peer sessions</span>
                   </div>
 
                   <div className="flex flex-col gap-2">
                     {/* Local User */}
-                    <div className="p-3 bg-slate-950 border border-indigo-500/10 rounded-xl flex items-center justify-between gap-3">
+                    <div className="p-3 bg-[#E0DFFD] border border-indigo-500/10 rounded-xl flex items-center justify-between gap-3">
                       <div className="flex items-center gap-2.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-indigo-400" />
                         <div>
@@ -1265,7 +1265,7 @@ export default function MeetingRoom({ user, meetingId, passcode, onLeave }) {
 
                     {/* Remote Sockets streams list */}
                     {remoteStreams.map((peer) => (
-                      <div key={peer.socketId} className="p-3 bg-slate-950 border border-white/5 rounded-xl flex items-center justify-between gap-3">
+                      <div key={peer.socketId} className="p-3 bg-[#E0DFFD] border border-white/5 rounded-xl flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2.5">
                           <div className={`w-2 h-2 rounded-full ${peer.connectionState === 'connected' ? 'bg-emerald-400' : 'bg-yellow-400 animate-pulse'}`} />
                           <div>

@@ -157,7 +157,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
           </div>
 
           {/* User profile layout block */}
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-950/60 border border-white/5 mb-6 hover:bg-slate-900/40 transition-colors duration-200">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-[#E0DFFD] /60 border border-white/5 mb-6 hover:bg-slate-900/40 transition-colors duration-200">
             <div 
               className="rounded-full overflow-hidden shrink-0 border border-white/10 relative transition-transform duration-300 hover:scale-110 flex items-center justify-center bg-gradient-to-tr from-indigo-500 via-indigo-600 to-purple-600 shadow-md shadow-indigo-500/10"
               style={{ width: '48px', height: '48px' }}
@@ -305,7 +305,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   
                   {/* Option 1: Instant Start */}
-                  <div className="p-5 rounded-xl bg-slate-950 border border-white/5 flex flex-col justify-between hover:border-slate-800 transition-all">
+                  <div className="p-5 rounded-xl bg-[#E0DFFD] border border-white/5 flex flex-col justify-between hover:border-slate-800 transition-all">
                     <div>
                       <div className="w-9 h-9 rounded-lg bg-indigo-600/10 border border-indigo-500/20 flex items-center justify-center mb-4">
                         <Plus className="w-5 h-5 text-indigo-400" />
@@ -322,7 +322,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                   </div>
 
                   {/* Option 2: Join with ID */}
-                  <form onSubmit={handleJoin} className="p-5 rounded-xl bg-slate-950 border border-white/5 flex flex-col justify-between hover:border-slate-800 transition-all">
+                  <form onSubmit={handleJoin} className="p-5 rounded-x bg-[#E0DFFD] border border-white/5 flex flex-col justify-between hover:border-slate-800 transition-all">
                     <div>
                       <div className="w-9 h-9 rounded-lg bg-emerald-600/10 border border-emerald-500/20 flex items-center justify-center mb-4">
                         <Key className="w-5 h-5 text-emerald-400" />
@@ -369,7 +369,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                 ) : (
                   <div className="flex flex-col gap-3">
                     {meetings.slice(0, 4).map((meet) => (
-                      <div key={meet.id} className="p-3.5 rounded-xl bg-slate-950 border border-white/5 hover:border-white/10 transition-all flex items-center justify-between gap-4">
+                      <div key={meet.id} className="p-3.5 rounded-xl bg-[#E0DFFD] border border-white/5 hover:border-white/10 transition-all flex items-center justify-between gap-4">
                         <div className="min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <span className="font-bold text-xs truncate max-w-[200px] text-slate-200">{meet.title}</span>
@@ -442,7 +442,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                       placeholder="e.g., Weekly Scrum / Product Review" 
                       value={scheduleTitle}
                       onChange={(e) => setScheduleTitle(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-lg px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD] border border-white/5 rounded-lg px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                       required
                     />
                   </div>
@@ -454,7 +454,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                       value={scheduleDesc}
                       onChange={(e) => setScheduleDesc(e.target.value)}
                       rows={2}
-                      className="w-full bg-slate-950 border border-white/5 rounded-lg px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 resize-none"
+                      className="w-full bg-[#E0DFFD]  border border-white/5 rounded-lg px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 resize-none"
                     />
                   </div>
 
@@ -465,7 +465,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                         type="date" 
                         value={scheduleDate}
                         onChange={(e) => setScheduleDate(e.target.value)}
-                        className="w-full bg-slate-950 border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
+                        className="w-full bg-[#E0DFFD] border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
                         required
                       />
                     </div>
@@ -476,7 +476,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                         placeholder="e.g., 03:30 PM"
                         value={scheduleTime}
                         onChange={(e) => setScheduleTime(e.target.value)}
-                        className="w-full bg-slate-950 border border-white/5 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                        className="w-full bg-[#E0DFFD] border border-white/5 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                         required
                       />
                     </div>
@@ -487,7 +487,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                     <select 
                       value={scheduleDuration}
                       onChange={(e) => setScheduleDuration(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD] border border-white/5 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
                     >
                       <option value="15">15 Minutes</option>
                       <option value="30">30 Minutes</option>
@@ -526,7 +526,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {meetings.map((meet) => (
-                  <div key={meet.id} className="p-5 rounded-xl bg-slate-950 border border-white/5 hover:border-white/10 transition-all flex flex-col justify-between">
+                  <div key={meet.id} className="p-5 rounded-xl bg-[#46467A] border border-white/5 hover:border-white/10 transition-all flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-start gap-4 mb-3">
                         <h3 className="font-extrabold text-sm text-white">{meet.title}</h3>
@@ -594,7 +594,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                     className={`w-full text-left p-3.5 rounded-xl border transition-all flex flex-col ${
                       selectedMeeting?.id === m.id 
                         ? 'bg-indigo-600/10 border-indigo-500/50 text-white' 
-                        : 'bg-slate-950 border-white/5 text-slate-300 hover:border-slate-800'
+                        : 'bg-[#E0DFFD] border-white/5 text-slate-300 hover:border-slate-800'
                     }`}
                   >
                     <span className="font-bold text-xs truncate max-w-full">{m.title}</span>
@@ -605,7 +605,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
 
               <div className="lg:col-span-8">
                 {selectedMeeting ? (
-                  <div className="p-6 rounded-xl bg-slate-950 border border-white/5">
+                  <div className="p-6 rounded-xl bg-[#E0DFFD] border border-white/5">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/5 pb-4 mb-6">
                       <div>
                         <h3 className="font-extrabold text-sm text-slate-100">{selectedMeeting.title}</h3>
@@ -675,7 +675,7 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                     )}
                   </div>
                 ) : (
-                  <div className="p-12 rounded-xl bg-slate-950/60 border border-white/5 border-dashed text-center text-slate-500 flex flex-col items-center justify-center">
+                  <div className="p-12 rounded-xl bg-[#E0DFFD]/60 border border-white/5 border-dashed text-center text-slate-500 flex flex-col items-center justify-center">
                     <Sparkles className="w-8 h-8 text-slate-700 mb-3" />
                     <p className="text-xs">No target session analyzed yet. Trigger any module on your left list to fetch summaries.</p>
                   </div>
@@ -689,9 +689,9 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
 
       {/* MEETING ANALYSIS INSIGHTS MODAL (Fallback Details overlay) */}
       {selectedMeeting && activeTab !== 'insights' && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#E0DFFD]/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-white/10 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl">
-            <div className="flex justify-between items-center bg-slate-950 px-6 py-4 border-b border-white/5">
+            <div className="flex justify-between items-center bg-[#E0DFFD] px-6 py-4 border-b border-white/5">
               <h3 className="font-extrabold text-sm">{selectedMeeting.title} Analysis Report</h3>
               <button 
                 onClick={() => setSelectedMeeting(null)}
@@ -705,19 +705,19 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
               
               {/* Core Details metadata */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="bg-slate-950 p-3 rounded-xl border border-white/5">
+                <div className="bg-[#E0DFFD] p-3 rounded-xl border border-white/5">
                   <span className="text-[9px] uppercase text-slate-500 font-bold block">Status</span>
                   <span className="text-xs font-bold text-white uppercase">{selectedMeeting.status}</span>
                 </div>
-                <div className="bg-slate-950 p-3 rounded-xl border border-white/5">
+                <div className="bg-[#E0DFFD] p-3 rounded-xl border border-white/5">
                   <span className="text-[9px] uppercase text-slate-500 font-bold block">Passcode PIN</span>
                   <span className="text-xs font-bold text-indigo-400 font-mono">{selectedMeeting.passcode}</span>
                 </div>
-                <div className="bg-slate-950 p-3 rounded-xl border border-white/5">
+                <div className="bg-[#E0DFFD] p-3 rounded-xl border border-white/5">
                   <span className="text-[9px] uppercase text-slate-500 font-bold block">Assigned Host</span>
                   <span className="text-xs font-bold text-white">{selectedMeeting.hostName}</span>
                 </div>
-                <div className="bg-slate-950 p-3 rounded-xl border border-white/5">
+                <div className="bg-[#E0DFFD] p-3 rounded-xl border border-white/5">
                   <span className="text-[9px] uppercase text-slate-500 font-bold block">Scheduled Date</span>
                   <span className="text-xs font-bold text-white">{selectedMeeting.date}</span>
                 </div>
@@ -752,12 +752,12 @@ export default function Dashboard({ user, onLogout, onJoinMeeting }) {
                 </div>
               ) : aiReport ? (
                 <div className="flex flex-col gap-4">
-                  <div className="bg-slate-950 p-4 rounded-xl border border-white/5">
+                  <div className="bg-[#E0DFFD] p-4 rounded-xl border border-white/5">
                     <span className="text-[10px] uppercase text-indigo-400 font-bold block mb-1">AI AUTOMATED MOM SUMMARY</span>
                     <p className="text-xs text-slate-300 leading-normal">{aiReport.summary}</p>
                   </div>
 
-                  <div className="bg-slate-950 p-4 rounded-xl border border-white/5">
+                  <div className="bg-[#E0DFFD] p-4 rounded-xl border border-white/5">
                     <span className="text-[10px] uppercase text-purple-400 font-bold block mb-2">Automated Tasks Checklist</span>
                     <div className="flex flex-col gap-1.5">
                       {aiReport.actionItems.map((act, idx) => (

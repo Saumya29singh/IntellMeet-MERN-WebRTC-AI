@@ -142,7 +142,7 @@ export default function App() {
   };
 
   return (
-    <div id="intellimeet-app-frame" className="min-h-screen bg-slate-950 font-sans antialiased text-slate-100">
+<div id="intellimeet-app-frame" className="min-h-screen bg-[#E0DFFD] font-sans antialiased text-slate-100">
       
       {/* 1. Landing view layout orchestrator */}
       {currentView === 'landing' && (
@@ -154,7 +154,7 @@ export default function App() {
 
       {/* 2. Glassmorphic popup auth blocks overlays */}
       {currentView === 'auth' && (
-        <div id="auth-canvas" className="min-h-screen flex items-center justify-center p-6 relative bg-slate-950">
+<div id="auth-canvas" className="min-h-screen flex items-center justify-center p-6 relative bg-[#E0DFFD]">
           {/* Backdrops */}
           <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] bg-indigo-900/10 rounded-full blur-[100px]" />
           <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-purple-900/10 rounded-full blur-[100px]" />
@@ -213,7 +213,7 @@ export default function App() {
             {authMode === 'login' ? (
               <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
                 <div>
-                  <label className="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-1 text-left">Corporate Email</label>
+                  <label className="text-[10px] uppercase font-bold tracking-wider text-[#E0DFFD] block mb-1 text-left">Corporate Email</label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-2.5 w-4 h-4 text-slate-500" />
                     <input 
@@ -221,14 +221,14 @@ export default function App() {
                       placeholder="e.g. john@example.com" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD]border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                       required
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-1 text-left">Secret Password</label>
+                  <label className="text-[10px] uppercase font-bold tracking-wider text-[#E0DFFD] block mb-1 text-left">Secret Password</label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-2.5 w-4 h-4 text-slate-500" />
                     <input 
@@ -236,7 +236,7 @@ export default function App() {
                       placeholder="Password credentials..." 
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD] border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                       required
                     />
                   </div>
@@ -259,7 +259,7 @@ export default function App() {
                         setEmail('sushant@example.com');
                         setPassword('password123');
                       }}
-                      className="px-2 py-1 rounded bg-slate-950 hover:bg-slate-850 text-[9px] hover:text-white border border-white/5 transition-colors"
+                      className="px-2 py-1 rounded bg-[#E0DFFD] hover:bg-slate-850 text-[9px] hover:text-white border border-white/5 transition-colors"
                     >
                       Sushant (Host)
                     </button>
@@ -269,7 +269,7 @@ export default function App() {
                         setEmail('mayuresh@example.com');
                         setPassword('password123');
                       }}
-                      className="px-2 py-1 rounded bg-slate-950 hover:bg-slate-850 text-[9px] hover:text-white border border-white/5 transition-colors"
+                      className="px-2 py-1 rounded bg-[#E0DFFD] hover:bg-slate-850 text-[9px] hover:text-white border border-white/5 transition-colors"
                     >
                       Mayuresh (Lead)
                     </button>
@@ -287,7 +287,7 @@ export default function App() {
                       placeholder="e.g. Sushant / Mayuresh" 
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD] border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                       required
                     />
                   </div>
@@ -302,7 +302,7 @@ export default function App() {
                       placeholder="e.g. user@domain.com" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD] border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                       required
                     />
                   </div>
@@ -317,7 +317,7 @@ export default function App() {
                       placeholder="Password credentials..." 
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                      className="w-full bg-[#E0DFFD] border border-white/5 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                       required
                     />
                   </div>
